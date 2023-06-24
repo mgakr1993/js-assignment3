@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			
+		</title>
+
+
+		<style type="text/css">
+
+			#grid1 , #grid2 , #grid4 , #grid5, #grid6 , #grid7 , #grid8 , #grid9 {
+				cursor: pointer;
+			}
+
+			 #grid1 :hover, #grid2 :hover , #grid3  , #grid4  :hover, #grid5 :hover, #grid6 :hover , #grid7 :hover , #grid8 :hover , #grid9  :hover {
+				background-color: whitesmoke;
+				font-size: 10px;
+				text-align: center;
+				color: blue;
+				box-shadow: inset 4px 4px 5px 1px darkgreen,inset -4px -4px 5px 1px darkgreen;
+				border-radius: 10%;
+				font-size-adjust: auto;
+				padding: 6px;
+				margin: 0 auto;
+			}
+
+
+			#grid {
+					height: 78%;
+					width: 100%;
+				  box-sizing: border-box;
+				  display: grid;
+				  grid-template-columns: 23.5% 23.5% 51%;
+				  grid-template-rows:33% 33% 33%;
+				  grid-column-gap:0.5% ;
+				  grid-row-gap:0.5%  ;
+				  margin: 0 auto;
+				  
+
+			}
+
+			#grid1 , #grid2 , #grid3 , #grid4 , #grid5, #grid6 , #grid7 , #grid8 , #grid9  {
+				background-color: whitesmoke;
+				font-size: 10px;
+				text-align: center;
+				color: blue;
+				box-shadow: inset 4px 4px 5px 1px darkblue,inset -4px -4px 5px 1px darkblue;
+				border-radius: 10%;
+				font-size-adjust: auto;
+				padding: 6px;
+				margin: 0 auto;
+			}
+
+			#grid3{
+				grid-column-start: 3;
+				grid-column-end:4;
+				grid-row-start: 1;
+				grid-row-end: 4;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				border-radius: 10%;
+		
+			}
+
+			#main{
+				background-color: lightblue;
+				margin: 0 auto;
+				border-radius: 10%;
+			}
+
+			body{
+				text-align:center;			}
+
+		</style>
+
+
+		<script type="text/javascript">
+
+			function selectProduct(btn){
+				
+				if (btn==1){
+					imgsrc = document.getElementById("grid1").innerHTML
+					document.getElementById("grid3").innerHTML = imgsrc
+					color = "White"
+				}
+				else if (btn==2){
+					imgsrc = document.getElementById("grid2").innerHTML
+					document.getElementById("grid3").innerHTML = imgsrc
+					color = "Black"
+				}
+
+				else if (btn==3){
+					imgsrc = document.getElementById("grid4").innerHTML
+					document.getElementById("grid3").innerHTML = imgsrc
+					color = "Blue"
+				}
+
+				else if (btn==4){
+					imgsrc = document.getElementById("grid5").innerHTML
+					document.getElementById("grid3").innerHTML = imgsrc
+					color = "Yellow"
+				}
+
+				else if (btn==5){
+					imgsrc = document.getElementById("grid6").innerHTML
+					document.getElementById("grid3").innerHTML = imgsrc
+					color = "Purple"
+				}
+
+				else if (btn==6){
+					imgsrc = document.getElementById("grid7").innerHTML
+					document.getElementById("grid3").innerHTML = imgsrc
+					color = "Red"
+				}
+			}
+
+			function showcolor	(){
+				try{
+				alert(color + " color T-shirt with a collar and short sleeves has been successfully added to the basket")
+			} catch(error){
+				alert("No selection found")
+			}
+				
+			}
+
+
+			function adjustHeight() {
+				var mainDiv = document.getElementById("main");
+				var viewportHeight = window.innerHeight;
+				mainDiv.style.height = viewportHeight + "px";
+				mainDiv.style.width = viewportHeight * 1.1 +"px"
+			}
+
+			window.onload = function() {
+				adjustHeight();
+			};
+
+			window.onresize = function() {
+				adjustHeight();
+			};
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="main">
+			<h1>Please select your desired color</h1>
+			<div id="grid" >
+
+				<div onclick="selectProduct(1)" id="grid1"><img src="img/Option1.jpg"> </div>
+
+				<div onclick="selectProduct(2)" id="grid2"><img src="img/Option2.jpg"> </div>
+
+				<div id="grid3"><img src="img/Option1.jpg"></div>
+
+				<div onclick="selectProduct(3)" id="grid4"><img src="img/Option3.jpg"> </div>
+
+				<div onclick="selectProduct(4)" id="grid5"><img src="img/Option4.jpg"> </div>
+
+				<div onclick="selectProduct(5)" id="grid6"><img src="img/Option5.jpg"> </div>
+
+				<div onclick="selectProduct(6)" id="grid7"><img src="img/Option6.jpg"> </div>
+				
+			</div>
+
+			<input style="margin-top: 0.5%;border-radius: 10%;font-size: 25px;" type="button" name="" value="Add to Basket" onclick="showcolor()">
+			
+		</div>
+
+		
+
+	</body>
+</html>
